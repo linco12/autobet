@@ -1,0 +1,38 @@
+# Environment — never commit credentials
+.env
+.env.*
+!.env.example
+
+# Database
+*.db
+*.sqlite
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Logs
+*.log
+backend.log
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE / Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
