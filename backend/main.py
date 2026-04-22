@@ -84,3 +84,14 @@ def manual_whatsapp_send():
         return result
     finally:
         db.close()
+
+
+@app.post("/api/admin/test-whatsapp")
+def test_whatsapp_send():
+    """Send a test message and return the raw Twilio response for debugging."""
+    from backend.services.whatsapp import send_whatsapp_message
+    success, sid, error = send_whatsapp_message(
+        settings.DEFAULT_RECIPIENT,
+        "AutoBet test message from Railway ✅",
+    )
+    return {"success": success, "sid": sid, "error": error}
